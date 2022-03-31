@@ -39,10 +39,9 @@ export default {
       else next();
     });
 
-
     this.$store.commit("initializeStore");
     const token = this.$store.state.token;
-
+  
     if (token) {
       axios.defaults.headers.common["Authorization"] = "Token " + token; //set API authorization token
     } else {
